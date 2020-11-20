@@ -7,10 +7,10 @@ class KegControl extends React.Component {
   constructor(props) {
     super(props);
     let state = {
-      formVisible = false,
-      masterKegList = [],
-      selectedKeg = null,
-      editing = false
+      formVisible: false,
+      masterKegList: [],
+      selectedKeg: null,
+      editing: false
     };
     this.handleClick = this.handleCLick.bind(this);
   }
