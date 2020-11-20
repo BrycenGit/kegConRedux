@@ -3,7 +3,7 @@ import KegDetail from "./KegDetail";
 import KegList from "./KegList";
 import EditKegForm from "./EditKegForm";
 import NewKegForm from "./NewKegForm"
-import {Button} from "react-bootstrap"
+import {Button, Alert} from "react-bootstrap"
 
 class KegControl extends React.Component {
 
@@ -64,7 +64,7 @@ class KegControl extends React.Component {
   handlePint = (id) => {
     const selectedKeg = this.state.masterKegList.filter(k => k.id === id)[0];
     selectedKeg.quantity -= 1
-    const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== this.state.selectedKeg).concat(selectedKeg);
+    const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== this.state.selectedKeg.id).concat(selectedKeg);
     this.setState({
       masterKegList: newMasterKegList,
       selectedItem: selectedKeg,

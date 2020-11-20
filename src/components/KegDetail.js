@@ -23,7 +23,7 @@ function KegDetail(props) {
           <Button onClick={()=> onClickingDelete(keg.id)} variant="secondary">Delete</Button>
         </ButtonGroup>  
         <ButtonGroup className="mr-2" aria-label="First Group">
-          <Button onClick={()=> onClickingPint(keg.id)} variant="success">Pint</Button>
+          <Button onClick={()=> {onClickingPint(keg.id)}} variant="success">Pint</Button>
         </ButtonGroup>
       </ButtonToolbar>
       </Card.Body>
