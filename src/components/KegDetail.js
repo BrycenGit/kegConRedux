@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function KegDetail(props) {
-  const {item, onClickingPint, onClickingDelete} = props;
+  const {keg, onClickingPint, onClickingDelete} = props;
 
   return(
     <>

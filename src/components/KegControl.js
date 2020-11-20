@@ -1,12 +1,14 @@
 import React from "react";
 import KegDetail from "./KegDetail";
 import KegList from "./KegList";
+import EditKegForm from "./EditKegForm";
+import NewKegForm from "./NewKegForm"
 
 class KegControl extends React.Component {
 
   constructor(props) {
     super(props);
-    let state = {
+    this.state = {
       formVisible: false,
       masterKegList: [],
       selectedKeg: null,
