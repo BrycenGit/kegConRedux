@@ -1,10 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Form, Button} from "react-bootstrap";
+import { Card } from "react-bootstrap";
+// import {Form, Button} from "react-bootstrap";
 function ReusableForm(props) {
 
   return(
     <>
+    <Card>
+      <Card.Body>
       <form onSubmit={props.formSubmissionHandler}>
         <div class="form-group">
           <label for="name">Keg Name</label>
@@ -48,7 +51,7 @@ function ReusableForm(props) {
           defaultValue={props.quantity ? props.quantity : "127"} />
         <button class="btn btn-success" type="submit">{props.buttonText}</button>  
       </form>
-
+      </Card.Body>
       {/* <Form>
         <Form.Group controlId="formName">
           <Form.Label for="name">Name</Form.Label>
@@ -59,7 +62,7 @@ function ReusableForm(props) {
         {props.buttonText}
         </Button>
       </Form> */}
-
+    </Card>
     </>
   )
 }
