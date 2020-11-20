@@ -9,6 +9,7 @@ function NewKegForm(props) {
     props.onClickingSubmit({
       name: event.target.name.value,
       brand: event.target.brand.value,
+      flavor: event.target.flavor.value,
       price: parseInt(event.target.price.value),
       quantity: parseInt(event.target.quantity.value),
       id: v4(),
