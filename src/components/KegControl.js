@@ -16,22 +16,38 @@ class KegControl extends React.Component {
   }
 
   handleSelectingKeg = (id) => {
-    selectedKeg = this.state.masterKegList.filter(k => k.id === id)[0]
+    const selectedKeg = this.state.masterKegList.filter(k => k.id === id)[0];
     this.setState({
-      selectedKeg: selectedKegs
+      selectedKeg: selectedKeg
     })
   }
+
+  handleEditClick = () => {
+    this.setState({editing: true})
+  }
+
+  handleKegEdit = (editedKeg) => {
+    const editedMasterKegList = this.state.editedMasterKegList.filter(keg => keg.id !== this.state.selectedKeg).concat(editedKeg);
+    this.setState({
+      masterKegList: editedMasterKegList,
+      editing: false,
+      selectedItem: null,
+    })
+  }
+
 
   handleClick = () => {
 
   }
 
-  handleKegEdit = (editedKeg) => {
 
-  }
 
   handleKegSubmission = (newKeg) => {
-    
+    const newMasterKegList = this.state.masterKegList.concat(newKeg)
+    this.setState({
+      masterKegList: newMasterKegList,
+      formVisible: false,
+    })
   }
 
   render() {
