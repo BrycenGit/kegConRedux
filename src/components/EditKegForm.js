@@ -7,7 +7,7 @@ function NewKegForm(props) {
 
   function handleEditKegFormSubmission(event) {
     event.preventDefault();
-    props.onClickingSubmit({
+    props.onClickingEdit({
       name: event.target.name.value,
       brand: event.target.brand.value,
       price: parseInt(event.target.price.value),
@@ -19,6 +19,10 @@ function NewKegForm(props) {
   return(
     <>
       <ReusableForm
+      name={keg.name}
+      brand={keg.brand}
+      price={keg.price}
+      quantity={keg.quantity}
       formSubmissionHandler={handleEditKegFormSubmission}
       buttonText="Update"/>
     </>
@@ -26,7 +30,7 @@ function NewKegForm(props) {
 }
 
 NewKegForm.PropTypes = {
-  onClickingSubmit: PropTypes.func,
+  onClickingEdit: PropTypes.func,
 }
 
 export default NewKegForm;
