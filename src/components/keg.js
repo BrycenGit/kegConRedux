@@ -6,10 +6,11 @@ function Keg(props) {
   return(
     <>
       <div onClick={()=>props.onClickingKeg(props.id)}>
-        <h3>props.name</h3>
-        <p>props.brand</p>
-        <p>props.price</p>
-        <p>props.quantity</p>
+        <h3>{props.name}</h3>
+        <p>{props.brand}</p>
+        <p>{props.flavor}</p>
+        <p>{props.price}</p>
+        <p>{props.quantity}</p>
       </div>
     </>
   );
@@ -18,6 +19,7 @@ function Keg(props) {
 Keg.propTypes = {
   name: PropTypes.string,
   brand: PropTypes.string,
+  flavor: PropTypes.string,
   price: PropTypes.number,
   quantity: PropTypes.number,
   onClickingKeg: PropTypes.func,
