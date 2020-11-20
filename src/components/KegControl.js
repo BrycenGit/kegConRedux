@@ -99,7 +99,7 @@ class KegControl extends React.Component {
       buttonText = "Return Home"
     } else {
       currentlyVisibleState = <KegList
-      masterKegList = {this.masterKegList}
+      masterKegList = {this.state.masterKegList}
       onClickingKeg= {this.handleSelectingKeg} />
       buttonText = "Add New Keg"
     }
