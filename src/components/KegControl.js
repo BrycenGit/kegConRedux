@@ -37,9 +37,26 @@ class KegControl extends React.Component {
 
 
   handleClick = () => {
-
+    if(this.state.selectedKeg != null) {
+      this.setState({
+        formVisible: false,
+        selectedKeg: null,
+        editing: false,
+      })
+    } else {
+      this.setState(prevState => ({
+        formVisible: !prevState.formVisible,
+      }));
+    }
   }
 
+  handleDeletingKeg = (id) => {
+    const newMasterKegList = this.state.masterKegList.filter(k => k.id !== id);
+    this.setState({
+      masterKegList: newMasterKegList,
+      selectedTicket:null
+    });
+  }
 
 
   handleKegSubmission = (newKeg) => {
@@ -55,12 +72,15 @@ class KegControl extends React.Component {
     let buttonText = null;
     if(this.state.editing) {
       currentlyVisibleState = <EditKegForm
+      keg = {this.state.selectedKeg}
       onClickingEdit = {this.handleKegEdit} />
       buttonText = "Return Home"
     } else if(this.state.selectedKeg !== null) {
       currentlyVisibleState = <KegDetail
-
-       />
+      keg = {this.state.selectedKeg}
+      onClickingDelete = {this.state.handleDeletingKeg}
+      onClickingEdit = {this.state.handleEditClick}
+      onClickingPint = {this.state.handlePint} />
       buttonText = "Return Home"
     } else if(this.state.formVisible) {
       currentlyVisibleState = <NewKegForm
