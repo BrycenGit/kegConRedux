@@ -15,6 +15,11 @@ class KegControl extends React.Component {
     this.handleClick = this.handleCLick.bind(this);
   }
 
+  handleSelectingKeg = (id) => {
+    selectedKeg = this.state.masterKegList.filter(k => k.id === id)[0]
+    this.setState({selectedKeg: selectedKeg})
+  }
+
   handleClick = () => {
 
   }
