@@ -17,7 +17,9 @@ class KegControl extends React.Component {
 
   handleSelectingKeg = (id) => {
     selectedKeg = this.state.masterKegList.filter(k => k.id === id)[0]
-    this.setState({selectedKeg: selectedKeg})
+    this.setState({
+      selectedKeg: selectedKegs
+    })
   }
 
   handleClick = () => {
@@ -50,7 +52,8 @@ class KegControl extends React.Component {
       buttonText = "Return Home"
     } else {
       currentlyVisibleState = <KegList
-      masterKegList = {this.masterKegList} />
+      masterKegList = {this.masterKegList}
+      onClickngKeg= {this.handleSelectingKeg} />
       buttonText = "Add New Keg"
     }
     return(
