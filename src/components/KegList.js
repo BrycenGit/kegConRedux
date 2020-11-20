@@ -1,12 +1,13 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
+import Keg from "./Keg";
 
 function KegList(props) {
   return(
     <>
       {props.masterKegList.map((keg, index) =>
         <Keg 
-        whenKegClicked={props.onClickingKeg}
+        onClickingKeg={props.onClickingKeg}
         name={keg.name}
         brand={keg.brand}
         price={keg.price}
