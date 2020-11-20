@@ -69,6 +69,7 @@ class KegControl extends React.Component {
       masterKegList: newMasterKegList,
       selectedItem: selectedKeg,
     });
+    alert("Sold!")
   }
 
   handleKegSubmission = (newKeg) => {
