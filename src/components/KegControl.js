@@ -106,7 +106,9 @@ class KegControl extends React.Component {
     }
     return(
       <>
+        <br />
         {currentlyVisibleState}
+        <br />  
         <Button onClick={this.handleClick}>{buttonText}</Button>
       </>
     );

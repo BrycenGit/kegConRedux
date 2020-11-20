@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Card } from "react-bootstrap"
+import { Card, ButtonGroup, Button, ButtonToolbar } from "react-bootstrap"
 
 function KegDetail(props) {
   const {keg, onClickingPint, onClickingDelete} = props;
@@ -14,9 +14,18 @@ function KegDetail(props) {
       <p>{keg.brand}</p>
       <p>{keg.price}</p>
       <p>{keg.quantity}</p>
-      <button onClick={props.onClickingEdit}>Update</button>
+      {/* <button onClick={props.onClickingEdit}>Update</button>
       <button onClick={()=> onClickingDelete(keg.id)}>Delete</button>
-      <button onClick={()=> onClickingPint(keg.id)}>Pint</button>
+      <button onClick={()=> onClickingPint(keg.id)}>Pint</button> */}
+      <ButtonToolbar aria-label="Toolbar with button groups">  
+        <ButtonGroup className="mr-2" aria-label="First Group">
+          <Button onClick={props.onClickingEdit} variant="secondary">Update</Button>
+          <Button onClick={()=> onClickingDelete(keg.id)} variant="secondary">Delete</Button>
+        </ButtonGroup>  
+        <ButtonGroup className="mr-2" aria-label="First Group">
+          <Button onClick={()=> onClickingPint(keg.id)} variant="success">Pint</Button>
+        </ButtonGroup>
+      </ButtonToolbar>
       </Card.Body>
     </Card>
     </>
