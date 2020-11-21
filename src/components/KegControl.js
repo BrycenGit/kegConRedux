@@ -3,7 +3,8 @@ import KegDetail from "./KegDetail";
 import KegList from "./KegList";
 import EditKegForm from "./EditKegForm";
 import NewKegForm from "./NewKegForm"
-import {Button, Alert} from "react-bootstrap"
+import PintAlert from "./PintAlert";
+import {Button} from "react-bootstrap"
 
 class KegControl extends React.Component {
 
@@ -82,8 +83,15 @@ class KegControl extends React.Component {
   }
 
   notifyPint = () => {
-    this.setState({alert: true})
-    // this.setState({alert: false})
+    setTimeout(function() {
+      this.setState({alert: !this.state.alert})
+    }, 1000)
+  }
+
+  componentDidMount() {
+    setTimeout(function() { //Start the timer
+        this.setState({render: true}) //After 1 second, set render to true
+    }.bind(this), 1000)
   }
 
   render() {
@@ -116,7 +124,7 @@ class KegControl extends React.Component {
     return(
       <>
         <br />
-        {this.state.alert ? <h1>hello</h1> : <h1>false</h1>}
+        {this.state.alert ? <PintAlert /> : null}
         {currentlyVisibleState}
         <br />  
         <Button onClick={this.handleClick}>{buttonText}</Button>
