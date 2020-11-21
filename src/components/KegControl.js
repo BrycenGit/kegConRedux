@@ -3,7 +3,7 @@ import KegDetail from "./KegDetail";
 import KegList from "./KegList";
 import EditKegForm from "./EditKegForm";
 import NewKegForm from "./NewKegForm"
-import {Button, Alert} from "react-bootstrap"
+import {Button, Toast} from "react-bootstrap"
 
 class KegControl extends React.Component {
 
@@ -69,7 +69,7 @@ class KegControl extends React.Component {
       masterKegList: newMasterKegList,
       selectedItem: selectedKeg,
     });
-    alert("Sold!")
+    this.notifyPint()
   }
 
   handleKegSubmission = (newKeg) => {
@@ -78,6 +78,20 @@ class KegControl extends React.Component {
       masterKegList: newMasterKegList,
       formVisible: false,
     });
+  }
+
+  notifyPint = () => {
+    <>
+    <Toast>
+      <Toast.Header>
+        <img src="holder.js/20x20?text=%20" className="rounded mr-2" alt="" />
+        <strong className="mr-auto">Bootstrap</strong>
+        <small>11 mins ago</small>
+      </Toast.Header>
+      <Toast.Body>Hello, world! This is a toast message.</Toast.Body>
+    </Toast>
+    </>
+    console.log("pont")
   }
 
   render() {
