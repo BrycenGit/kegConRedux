@@ -3,7 +3,7 @@ import KegDetail from "./KegDetail";
 import KegList from "./KegList";
 import EditKegForm from "./EditKegForm";
 import NewKegForm from "./NewKegForm"
-import {Button, Toast} from "react-bootstrap"
+import {Button, Alert} from "react-bootstrap"
 
 class KegControl extends React.Component {
 
@@ -13,7 +13,8 @@ class KegControl extends React.Component {
       formVisible: false,
       masterKegList: [],
       selectedKeg: null,
-      editing: false
+      editing: false,
+      alert: false,
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -81,22 +82,14 @@ class KegControl extends React.Component {
   }
 
   notifyPint = () => {
-    <>
-    <Toast>
-      <Toast.Header>
-        <img src="holder.js/20x20?text=%20" className="rounded mr-2" alt="" />
-        <strong className="mr-auto">Bootstrap</strong>
-        <small>11 mins ago</small>
-      </Toast.Header>
-      <Toast.Body>Hello, world! This is a toast message.</Toast.Body>
-    </Toast>
-    </>
-    console.log("pont")
+    this.setState({alert: true})
+    // this.setState({alert: false})
   }
 
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
+    let alert = null;
     if(this.state.editing) {
       currentlyVisibleState = <EditKegForm
       keg = {this.state.selectedKeg}
@@ -109,6 +102,7 @@ class KegControl extends React.Component {
       onClickingEdit = {this.handleEditClick}
       onClickingPint = {this.handlePint} />
       buttonText = "Return Home"
+    
     } else if(this.state.formVisible) {
       currentlyVisibleState = <NewKegForm
       onClickingSubmit = {this.handleKegSubmission} />
@@ -122,6 +116,7 @@ class KegControl extends React.Component {
     return(
       <>
         <br />
+        {this.state.alert ? <h1>hello</h1> : <h1>false</h1>}
         {currentlyVisibleState}
         <br />  
         <Button onClick={this.handleClick}>{buttonText}</Button>
