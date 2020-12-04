@@ -9,8 +9,7 @@ export default (state = null, action) => {
       const selectState = keg
       return selectState;
     case c.UNSELECT_KEG:
-      const unselectState = null
-      return unselectState;
+      return null;
     default:
       return state;
   }

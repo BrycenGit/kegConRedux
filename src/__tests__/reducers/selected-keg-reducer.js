@@ -21,6 +21,7 @@ describe("selectedKegReducer", () => {
     },
   }
   let action;
+  let action2;
   const keg = {
     name: 'yummy',
     brand: 'yoyos',
@@ -43,11 +44,15 @@ describe("selectedKegReducer", () => {
   });
   
   test('should toggle from visibility state to true', () => {
-
     action = {
-      type: a.UNSELECT_KEG,
-    }
-    expect(selectedKegReducer(currentState, action)).toEqual(keg);
+      type: a.SELECT_KEG,
+      keg: keg}
+
+    action2 = {type: a.UNSELECT_KEG};
+    
+    const selectedState = selectedKegReducer(currentState, action)
+
+    expect(selectedKegReducer(selectedState, action2)).toEqual(null);
   });
 
 });
