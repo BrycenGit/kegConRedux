@@ -3,7 +3,6 @@ import KegDetail from "./KegDetail";
 import KegList from "./KegList";
 import EditKegForm from "./EditKegForm";
 import NewKegForm from "./NewKegForm"
-import PintAlert from "./PintAlert";
 import {Button} from "react-bootstrap"
 
 class KegControl extends React.Component {
@@ -11,11 +10,8 @@ class KegControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisible: false,
       masterKegList: [],
       selectedKeg: null,
-      editing: false,
-      alert: false,
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -91,7 +87,6 @@ class KegControl extends React.Component {
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
-    let alert = null;
     if(this.state.editing) {
       currentlyVisibleState = <EditKegForm
       keg = {this.state.selectedKeg}
@@ -118,7 +113,6 @@ class KegControl extends React.Component {
     return(
       <>
         <br />
-        {this.state.alert ? <PintAlert /> : null}
         {currentlyVisibleState}
         <br />  
         <Button onClick={this.handleClick}>{buttonText}</Button>
