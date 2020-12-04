@@ -31,7 +31,7 @@ function NewKegForm(props) {
   );
 }
 
-NewKegForm.PropTypes = {
+NewKegForm.propTypes = {
   onClickingEdit: PropTypes.func,
 }
 

@@ -71,7 +71,6 @@ class KegControl extends React.Component {
       masterKegList: newMasterKegList,
       selectedItem: selectedKeg,
     });
-    this.notifyPint()
   }
 
   handleKegSubmission = (newKeg) => {
@@ -82,11 +81,6 @@ class KegControl extends React.Component {
     });
   }
 
-  notifyPint = () => {
-    setTimeout(function() {
-      this.setState({alert: !this.state.alert})
-    }, 1000)
-  }
 
   componentDidMount() {
     setTimeout(function() { //Start the timer
