@@ -6,11 +6,11 @@ export default (state = null, action) => {
 
   switch (action.type) {
     case c.SELECT_KEG:
-      const newState = keg
-      return newState;
+      const selectState = keg
+      return selectState;
     case c.UNSELECT_KEG:
-      const newState = null
-      return newState;
+      const unselectState = null
+      return unselectState;
     default:
       return state;
   }
