@@ -43,7 +43,7 @@ describe("selectedKegReducer", () => {
     expect(selectedKegReducer(currentState, action)).toEqual(keg);
   });
   
-  test('should toggle from visibility state to true', () => {
+  test('should set state to null', () => {
     action = {
       type: a.SELECT_KEG,
       keg: keg}
