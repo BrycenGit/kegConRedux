@@ -28,6 +28,18 @@ describe('rootReducer', () => {
     expect(store.getState().editing).toEqual(formVisibleReducer(undefined, { type: null }));
   });
   
-
+  test('Check that Add_Keg action works for KegListReducer and root reducer', () => {
+    const action = {
+      type: c.ADD_KEG,
+      name: 'yummy',
+      brand: 'yoyos',
+      flavor: 'tasty',
+      price: 100,
+      quantity: 127,
+      id: 1,
+    }
+    store.dispatch(action);
+    expect(store.getState().masterKegList).toEqual(kegListReducer(undefined, action));
+  });
 
 });
