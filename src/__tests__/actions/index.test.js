@@ -9,5 +9,10 @@ describe('keg actions', () => {
     });
   });
 
+  it('toggleform should create TOGGLE_FORM action', ()=> {
+    expect(actions.toggleForm()).toEqual({
+      type: c.TOGGLE_FORM
+    });
+  });
 
 })
