@@ -32,6 +32,6 @@ describe('kegListReducer', () => {
   }
 
   test('should return efault state if there is no action type [assed into the reducer', ()=> {
-    expect(ticketListReducer({}, { type: null })).toEqual({});
+    expect(kegListReducer({}, { type: null })).toEqual({});
   });
 })
