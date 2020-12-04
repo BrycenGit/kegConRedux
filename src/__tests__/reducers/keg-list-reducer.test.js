@@ -24,14 +24,42 @@ describe('kegListReducer', () => {
   let action;
   const kegData = {
     name: 'yummy',
-      brand: 'yoyos',
-      flavor: 'tasty',
-      price: 100,
-      quantity: 127,
-      id: 1
+    brand: 'yoyos',
+    flavor: 'tasty',
+    price: 100,
+    quantity: 127,
+    id: 1
   }
 
   test('should return efault state if there is no action type [assed into the reducer', ()=> {
     expect(kegListReducer({}, { type: null })).toEqual({});
   });
+
+  test("should successfu;;y add new keg data to masterkegList", ()=> {
+    const { name, brand, flavor, price, quantity, id } = kegData;
+    
+    action = {
+      type: a.ADD_KEG,
+      name: name,
+      brand: brand,
+      flavor: flavor,
+      price: price,
+      quantity: quantity,
+      id: id,
+    }
+    
+    expect(kegListReducer({}, action)).toEqual({
+      [id] : {
+        name: name,
+        brand: brand,
+        flavor: flavor,
+        price: price,
+        quantity: quantity,
+        id: id,
+      }
+    });
+  });
+
+
+  
 })
