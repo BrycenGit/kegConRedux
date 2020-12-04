@@ -42,4 +42,10 @@ describe('keg actions', () => {
       keg: keg
     })
   })
+
+  test('unselectKeg should be UNSELECT_KEG', () => {
+    expect(actions.unselectKeg()).toEqual({
+      type: c.UNSELECT_KEG,
+    })
+  })
 })
