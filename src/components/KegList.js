@@ -5,7 +5,7 @@ import Keg from "./Keg";
 function KegList(props) {
   return(
     <>
-      {props.masterKegList.map((keg, index) =>
+      {Object.values(props.masterKegList).map((keg, index) =>
         <Keg 
         onClickingKeg={props.onClickingKeg}
         name={keg.name}
