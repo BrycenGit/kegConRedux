@@ -16,6 +16,12 @@ export const unselectKeg = () => ({
   type: a.UNSELECT_KEG
 })
 
+export const pint = (id) => ({
+  type: a.PINT,
+  id: id
+
+})
+
 export const selectKeg = (keg) => {
   return {
     type: a.SELECT_KEG,

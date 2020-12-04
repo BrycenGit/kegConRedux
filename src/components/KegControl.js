@@ -70,7 +70,9 @@ class KegControl extends React.Component {
   }
 
   handlePint = (id) => {
-    
+    const { dispatch } = this.props;
+    const action = a.pint(id);
+    dispatch(action);
   }
 
   handleKegSubmission = (newKeg) => {

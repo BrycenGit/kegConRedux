@@ -19,6 +19,12 @@ export default (state = {}, action) => {
       const newState = { ...state };
       delete newState[id];
       return newState;
+    case c.PINT:
+      console.log('here')
+      const pintState = { ...state };
+      console.log(pintState)
+      pintState[id].quantity --
+      return pintState;
     default:
       return state;
   }

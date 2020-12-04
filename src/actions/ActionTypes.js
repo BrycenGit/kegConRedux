@@ -5,3 +5,4 @@ export const UPDATE_TIME = 'UPDATE_TIME';
 export const EDITING = 'EDITING';
 export const SELECT_KEG = 'SELECT_KEG';
 export const UNSELECT_KEG = 'UNSELECT_KEG';
+export const PINT = 'PINT';
