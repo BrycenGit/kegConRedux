@@ -42,4 +42,20 @@ describe('rootReducer', () => {
     expect(store.getState().masterKegList).toEqual(kegListReducer(undefined, action));
   });
 
+
+  test('check that TOGGLE_FORM action works for formVisibleReducer and root reducer', () => {
+    const action = {
+      type: c.TOGGLE_FORM
+    }
+    store.dispatch(action);
+    expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, action ));
+  });
+  
+  test('check that EDITING action works for formVisibleReducer and root reducer', () => {
+    const action = {
+      type: c.EDITING
+    }
+    store.dispatch(action);
+    expect(store.getState().editing).toEqual(editingReducer(undefined, action ));
+  });
 });
