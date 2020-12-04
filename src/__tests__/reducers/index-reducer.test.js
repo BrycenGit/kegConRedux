@@ -1,7 +1,7 @@
 import rootReducer from '../../reducers/index';
 import { createStore } from 'redux';
 // import formVisibleReducer from '../../reducers/form-visible-reducer';
-// import kegListReducer from '../../reducers/keg-list-reducer';
+import kegListReducer from '../../reducers/keg-list-reducer';
 // import editingReducer from '../../reducers/editing-reducer';
 // import * as c from '../../actions/ActionTypes'
 
@@ -16,5 +16,8 @@ describe('rootReducer', () => {
     });
   });
 
+  test('Check that initial state of kegListReducer matches root reducer', () => {
+    expect(store.getState().masterKegList).toEqual(kegListReducer(undefined, { type: null }));
+  });
 
 });
