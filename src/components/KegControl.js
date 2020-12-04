@@ -20,6 +20,7 @@ class KegControl extends React.Component {
     const selectedKeg = this.props.masterKegList[id]
     const action = a.selectKeg(selectedKeg)
     dispatch(action);
+    console.log(this.props)
   }
 
   handleEditClick = () => {
@@ -34,20 +35,29 @@ class KegControl extends React.Component {
     dispatch(action);
     const action2 = a.editing();
     dispatch(action2);
+    const action3 = a.selectKeg(editedKeg)
+    dispatch(action3);
   }
 
 
   handleClick = () => {
-    if(this.state.selectedKeg != null) {
+    if (this.props.editing) {
       const { dispatch } = this.props;
       const action = a.editing();
       const action2 = a.unselectKeg();
       dispatch(action);
       dispatch(action2);
+
+    } else if(this.props.keg !== null) {
+      const { dispatch } = this.props;
+      const action2 = a.unselectKeg();
+      dispatch(action2);
+      console.log('not null')
     } else {
       const { dispatch } = this.props;
       const action = a.toggleForm();
       dispatch(action);
+      console.log('null')
     }
   }
 
@@ -76,12 +86,14 @@ class KegControl extends React.Component {
     let buttonText = null;
     if(this.props.editing) {
       currentlyVisibleState = <EditKegForm
-      keg = {this.props.selectedKeg}
+      keg = {this.props.keg}
       onClickingEdit = {this.handleKegEdit} />
       buttonText = "Return Home"
-    } else if(this.props.selectedKeg != null) {
+    } else if(this.props.keg != null) {
+      console.log('hello')
       currentlyVisibleState = <KegDetail
-      keg = {this.props.selectedKeg}
+      keg = {this.props.keg}
+      
       onClickingDelete = {this.handleDeletingKeg}
       onClickingEdit = {this.handleEditClick}
       onClickingPint = {this.handlePint} />
@@ -112,7 +124,7 @@ KegControl.propTypes = {
   masterKegList: PropTypes.object,
   formVisible: PropTypes.bool,
   editing: PropTypes.bool,
-  selectedKeg: PropTypes.object,
+  keg: PropTypes.object,
 }
 
 const mapStateToProps = state => {
@@ -120,7 +132,7 @@ const mapStateToProps = state => {
     masterKegList: state.masterKegList,
     formVisible: state.formVisible,
     editing: state.editing,
-    selectedKeg: state.selectedKeg
+    keg: state.keg
   }
 }
 
