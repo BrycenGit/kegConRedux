@@ -2,6 +2,7 @@ import * as actions from '../../actions/index';
 import * as c from '../../actions/ActionTypes';
 
 describe('keg actions', () => {
+  let keg;
   it('deleteKeg is DELETE_KEG', () => {
     expect(actions.deleteKeg(1)).toEqual({
       type: c.DELETE_KEG,
@@ -34,4 +35,11 @@ describe('keg actions', () => {
       id: 1,
     });
   });
+
+  test('selectKeg should be SELECT_KEG', () => {
+    expect(actions.selectKeg(keg)).toEqual({
+      type: c.SELECT_KEG,
+      keg: keg
+    })
+  })
 })
