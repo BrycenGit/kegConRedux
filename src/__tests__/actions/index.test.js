@@ -15,4 +15,23 @@ describe('keg actions', () => {
     });
   });
 
+
+  it('addKeg should create ADD_KEG action', () => {
+    expect(actions.addKeg({
+      name: 'yummy',
+      brand: 'yoyos',
+      flavor: 'tasty',
+      price: 100,
+      quantity: 127,
+      id: 1,
+    })).toEqual({
+      type: c.ADD_KEG,
+      name: 'yummy',
+      brand: 'yoyos',
+      flavor: 'tasty',
+      price: 100,
+      quantity: 127,
+      id: 1,
+    });
+  });
 })

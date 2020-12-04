@@ -23,7 +23,7 @@ export const selectKeg = (keg) => {
   }
 };
 
-export const addTicket = (keg) => {
+export const addKeg = (keg) => {
   const { name, brand, flavor, id, price, quantity } = keg;
   return {
     type: a.ADD_KEG,
