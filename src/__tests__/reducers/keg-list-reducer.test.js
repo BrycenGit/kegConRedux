@@ -60,6 +60,21 @@ describe('kegListReducer', () => {
     });
   });
 
+  test('Should successfully delete a Keg', () => {
+    action = {
+      type: a.DELETE_KEG,
+      id: 1
+    };
+    expect(kegListReducer(currentState, action)).toEqual({
+      2: {
+        name: 'trapper',
+        brand: 'migos',
+        flavor: 'tasty',
+        price: 150,
+        quantity: 127,
+        id: 2,
+      },
+    });
+  });
 
-  
 })
