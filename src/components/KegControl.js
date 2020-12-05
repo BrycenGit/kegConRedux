@@ -10,17 +10,11 @@ import * as a from  './../actions';
 
 class KegControl extends React.Component {
 
-  // constructor(props) {
-  //   super(props);
-  //   this.handleClick = this.handleClick.bind(this);
-  // }
-
   handleSelectingKeg = (id) => {
     const { dispatch } = this.props;
     const selectedKeg = this.props.masterKegList[id]
     const action = a.selectKeg(selectedKeg)
     dispatch(action);
-    console.log(this.props)
   }
 
   handleEditClick = () => {
@@ -52,12 +46,10 @@ class KegControl extends React.Component {
       const { dispatch } = this.props;
       const action2 = a.unselectKeg();
       dispatch(action2);
-      console.log('not null')
     } else {
       const { dispatch } = this.props;
       const action = a.toggleForm();
       dispatch(action);
-      console.log('null')
     }
   }
 
@@ -95,12 +87,10 @@ class KegControl extends React.Component {
       console.log('hello')
       currentlyVisibleState = <KegDetail
       keg = {this.props.keg}
-      
       onClickingDelete = {this.handleDeletingKeg}
       onClickingEdit = {this.handleEditClick}
       onClickingPint = {this.handlePint} />
       buttonText = "Return Home"
-    
     } else if(this.props.formVisible) {
       currentlyVisibleState = <NewKegForm
       onClickingSubmit = {this.handleKegSubmission} />
