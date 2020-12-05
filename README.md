@@ -51,6 +51,10 @@ For Project
 npm start
 ```
 
+## Diagram
+
+![Alt text](./Diagram.jpg?raw=true "Diagram")
+
 ## Support and Contact Details
 
 _Check out my GitHub!_
@@ -65,6 +69,8 @@ _Check out my GitHub!_
 - [node](https://nodejs.org/en/docs/)
 
 ### License
+
+[MIT](https://choosealicense.com/licenses/mit/)
 
 Copyright (c) 2020 **_Brycen Bartolome_**
 
