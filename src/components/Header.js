@@ -1,6 +1,6 @@
 import React from "react";
-import {Navbar, Nav, Form, FormControl, Button} from "react-bootstrap"
-import PropTypes from "prop-types"
+import {Navbar} from "react-bootstrap"
+
 
 function Header(props) {
 
