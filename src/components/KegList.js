@@ -23,7 +23,7 @@ function KegList(props) {
 } 
 
 KegList.propTypes = {
-  masterKegList: PropTypes.array,
+  masterKegList: PropTypes.object,
   onClickingKeg: PropTypes.func
 }
 

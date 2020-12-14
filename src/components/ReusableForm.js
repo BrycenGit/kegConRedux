@@ -9,59 +9,50 @@ function ReusableForm(props) {
     <Card>
       <Card.Body>
       <form onSubmit={props.formSubmissionHandler}>
-        <div class="form-group">
-          <label for="name">Keg Name</label>
+        <div className="form-group">
+          <label htmlFor="name">Keg Name</label>
           <input 
-            class="form-control"
+            className="form-control"
             type="text"
             name="name"
             defaultValue={props.name ? props.name : ""}
-            placeHolder="..." />
+            placeholder="..." />
         </div>
-        <div class="form-group">
-          <label for="brand">Keg Brand</label>
+        <div className="form-group">
+          <label htmlFor="brand">Keg Brand</label>
           <input
-            class="form-control"
+            className="form-control"
             type="text"
             name="brand"
             defaultValue={props.brand ? props.brand : ""}
-            placeHolder="..." />
+            placeholder="..." />
         </div>
-        <div class="form-group">
-          <label for="flavor">Keg Flavor</label>
+        <div className="form-group">
+          <label htmlFor="flavor">Keg Flavor</label>
           <input
-            class="form-control"
+            className="form-control"
             type="text"
             name="flavor"
             defaultValue={props.flavor ? props.flavor : ""}
-            placeHolder="..." />
+            placeholder="..." />
         </div>
-        <div class="form-group">
-          <label for="price">Keg Price</label>
+        <div className="form-group">
+          <label htmlFor="price">Keg Price</label>
           <input
-            class="form-control"
+            className="form-control"
             type="number"
             name="price"
             defaultValue={props.price ? props.price : ""}
-            placeHolder={0} />
+            placeholder={0} />
         </div>
         <input 
           type="hidden"
           name="quantity"
           defaultValue={props.quantity ? props.quantity : "127"} />
-        <button class="btn btn-success" type="submit">{props.buttonText}</button>  
+        <button className="btn btn-success" type="submit">{props.buttonText}</button>  
       </form>
       </Card.Body>
-      {/* <Form>
-        <Form.Group controlId="formName">
-          <Form.Label for="name">Name</Form.Label>
-          <Form.Control name="name" type="text" defaultValue={props.name ? props.name : ""} placeholder="Enter email" />
-        </Form.Group>
-
-        <Button variant="primary" type="submit">
-        {props.buttonText}
-        </Button>
-      </Form> */}
+      
     </Card>
     </>
   )
